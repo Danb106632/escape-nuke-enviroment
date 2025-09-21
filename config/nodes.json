@@ -1,0 +1,52 @@
+{
+    "nodes": [
+        {
+            "class": "Read",
+            "file": "file"
+        },
+        {
+            "class": "Write",
+            "file": "file"
+        },
+        {
+            "class": "ReadGeo2",
+            "file": "file"
+        },
+        {
+            "class": "WriteGeo",
+            "file": "file"
+        },
+        {
+            "class": "GeoImport",
+            "file": "file"
+        },
+        {
+            "class": "GeoExport",
+            "file": "file"
+        },
+        {
+            "class": "DeepRead",
+            "file": "file"
+        },
+        {
+            "class": "DeepWrite",
+            "file": "file"
+        },
+        {
+            "class": "Camera3",
+            "file": "file_link"
+        },
+        {
+            "class": "Camera4",
+            "file": "file"
+        },
+        {
+            "class": "Inference",
+            "file": "model_file"
+        },
+        {
+            "class": "AudioRead",
+            "file": "file"
+        }
+    ]
+}
