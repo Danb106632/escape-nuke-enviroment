@@ -41,7 +41,7 @@ NST_helpDocPath = "file:///{}".format(NST_helpDoc_os_path)
 
 # Create NukeSurivalToolkit Menu
 toolbar = nuke.menu('Nodes')
-m = toolbar.addMenu('NukeSurvivalToolkit', icon = "SurvivalToolkit.png")
+m = toolbar.addMenu('Escape Studios/NukeSurvivalToolkit', icon = "SurvivalToolkit.png")
 
 
 ############################################################################################################
