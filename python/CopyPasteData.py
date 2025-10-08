@@ -25,4 +25,3 @@ def PasteData(number):
             nuke.nodePaste(os.path.join(pathWindowsUG, file))
         except RuntimeError:
             nuke.message("File Path Not Found!")
-
