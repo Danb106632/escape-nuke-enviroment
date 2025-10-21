@@ -11,6 +11,8 @@ def try_update():
     # GitHub API URL for the latest release
     api_url = f"https://api.github.com/repos/{owner}/{repo}/releases/latest"
 
+    print("UPDATER: Querying GitHub...")
+
     # Get latest release info
     try:
         response = requests.get(api_url)
@@ -35,7 +37,6 @@ def try_update():
     try: 
         zip_url = release_data["zipball_url"]
         tag_name = release_data["tag_name"]
-        name = release_data["name"]
     except KeyError as e:
         print("URL and values not found. Check github response")
         return
@@ -52,7 +53,7 @@ def try_update():
     Path(dirReleaseFolder).mkdir(parents=False, exist_ok=True) 
 
     # Set variables
-    gitFileVersion = f"{repo}-{tag_name}-{name}"
+    gitFileVersion = f"{repo}-{tag_name}"
     filename = dirReleaseFolder + f"/{gitFileVersion}.zip"
 
     version = get_downloaded_version()
@@ -73,6 +74,8 @@ def try_update():
 
     
     extract_update(filename, str(Path("X:\.nuke").resolve()))
+
+    print("UPDATER: Done!")
 
 
 
@@ -141,7 +144,6 @@ def extract_update(zip_path, extract_to):
                     target_path.parent.mkdir(parents=True, exist_ok=True)
                     with zip_ref.open(member) as source, open(target_path, 'wb') as target:
                         target.write(source.read())
-                    print(f"Extracted: {target_path}")
 
                 except PermissionError:
                     print(f"Permission denied when extracting {target_path}. Skipping.")
