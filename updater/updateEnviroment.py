@@ -41,7 +41,7 @@ def try_update():
         return
 
     # Skip if not a release version
-    if "release" != tag_name:
+    if "release" not in tag_name:
         return
 
     # Download the ZIP
