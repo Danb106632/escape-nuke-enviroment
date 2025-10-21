@@ -1,3 +1,3 @@
 import updateEnviroment
 
-updateEnviroment.download()
+updateEnviroment.try_update()

@@ -2,7 +2,7 @@ import nuke
 
 import os
 import json
-import platform
+
 
 def toRelative():
     with open(os.path.dirname(__file__) + '/../config/nodes.json', 'r') as f:
@@ -18,9 +18,7 @@ def toRelative():
                         n[node['file']].setValue(_getRelativePath(filePath))
                     except ValueError:
                         continue
-
-
-
+                    
 
 def toAbsolute():
     with open(os.path.dirname(__file__) + '/../config/nodes.json', 'r') as f:
@@ -37,9 +35,11 @@ def toAbsolute():
                     except ValueError:
                         continue
 
+
 def _getAbsolutePath(path):
     absPath = os.path.abspath(os.path.join(nuke.script_directory(), path))
     return absPath.replace('\\', '/')
+
 
 def _getRelativePath(path):
     absPath = os.path.relpath(path, nuke.script_directory())
