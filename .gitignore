@@ -1,6 +1,0 @@
-/cattery/*
-/__pycache__/*
-*.pyc
-.gitignore
-*.zip
-version.json
