@@ -10,6 +10,15 @@ updated: 16/09/2025
 import nuke
 import nukescripts
 
+# Custom Imports
+
+import python.CustomSettings
+
+################################
+
+python.CustomSettings.default_settings()
+python.CustomSettings.custom_keybinds()
+
 ################################
 
 # Add Escape to the Nodes Toolbar
@@ -25,6 +34,12 @@ for i in range(1,6):
 ################################
 
 Escape.addCommand("Read From Write", "import ReadFromWrite\nReadFromWrite.ReadFromWrite()", "Ctrl+Alt+R")
+
+################################
+
+Escape.addCommand("Postage Replace", "import PostageReplace\nPostageReplace.PostageReplace()", "Ctrl+Alt+R")
+
+################################
 
 Escape.addCommand("Python Commands/Relative Paths/Aboslute2Relative", "import Absolute2Relative\nAbsolute2Relative.toRelative()")
 Escape.addCommand("Python Commands/Relative Paths/Relative2Absolute", "import Absolute2Relative\nAbsolute2Relative.toAbsolute()")
