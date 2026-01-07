@@ -19,16 +19,16 @@ def try_update():
         response.raise_for_status()
     except requests.exceptions.RequestException as err:
         print ("Oops: Something Else",err)
-        return
+        pass
     except requests.exceptions.HTTPError as errh:
         print ("Http Error:",errh)
-        return
+        pass
     except requests.exceptions.ConnectionError as errc:
         print ("Error Connecting:",errc)
-        return
+        pass
     except requests.exceptions.Timeout as errt:
         print ("Timeout Error:",errt)
-        return
+        pass
     
     
     release_data = response.json()
