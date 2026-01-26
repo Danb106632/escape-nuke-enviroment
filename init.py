@@ -14,4 +14,3 @@ nuke.pluginAddPath('./icons')
 nuke.pluginAddPath('./plugins')
 nuke.pluginAddPath('./python')
 nuke.pluginAddPath('./repos')
-
