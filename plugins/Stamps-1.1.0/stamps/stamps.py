@@ -51,13 +51,18 @@ if sys.version_info[0] >= 3:
     unicode = str
 
 # PySide import switch
+
 try:
-    if nuke.NUKE_VERSION_MAJOR < 11:
-        from PySide import QtCore, QtGui, QtGui as QtWidgets
-        from PySide.QtCore import Qt
-    else:
-        from PySide2 import QtWidgets, QtGui, QtCore
-        from PySide2.QtCore import Qt
+
+if nuke.NUKE_VERSION_MAJOR < 11:
+    from PySide import QtCore, QtGui, QtGui as QtWidgets
+    from PySide.QtCore import Qt
+elif nuke.NUKE_VERSION_MAJOR < 16:
+    from PySide2 import QtWidgets, QtGui, QtCore
+    from PySide2.QtCore import Qt
+else:
+    from PySide6 import QtWidgets, QtGui, QtCore
+    from PySide6.QtCore import Qt
 except ImportError:
     from Qt import QtCore, QtGui, QtWidgets
 
