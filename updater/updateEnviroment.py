@@ -72,8 +72,8 @@ def try_update():
 
     print(f"UPDATER: New version found: {gitFileVersion} \nExtracting......")
 
-    
-    extract_update(filename, str(Path("X:\.nuke").resolve()))
+
+    extract_update(filename, str(Path(__file__).parent.parent.resolve()))
 
     print("UPDATER: Done!")
 
