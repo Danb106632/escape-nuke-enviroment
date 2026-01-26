@@ -41,7 +41,7 @@ Escape.addCommand("Postage Replace", "import PostageReplace\nPostageReplace.Post
 
 ################################
 
-Escape.addCommand("Python Commands/Relative Paths/Aboslute2Relative", "import Absolute2Relative\nAbsolute2Relative.toRelative()")
+Escape.addCommand("Python Commands/Relative Paths/Absolute2Relative", "import Absolute2Relative\nAbsolute2Relative.toRelative()")
 Escape.addCommand("Python Commands/Relative Paths/Relative2Absolute", "import Absolute2Relative\nAbsolute2Relative.toAbsolute()")
 
 Escape.addCommand("Python Commands/Roto to Trackers", "import RotoToTrackers\nRotoToTrackers.RotoShape_to_Trackers()")
