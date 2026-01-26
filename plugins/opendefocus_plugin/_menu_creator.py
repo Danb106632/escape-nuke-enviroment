@@ -13,7 +13,7 @@ def _create_menu():
     # type: () -> None
     """Create the Nuke menu and add the command."""
     toolbar = nuke.menu("Nodes")
-    menu = toolbar.addMenu("OpenDefocus", icon="OpenDefocus.png")
+    menu = toolbar.addMenu("Escape Studios/OpenDefocus", icon="OpenDefocus.png")
     menu.addCommand("OpenDefocus", "nuke.createNode('OpenDefocus')")
 
 
