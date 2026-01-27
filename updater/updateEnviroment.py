@@ -1,4 +1,5 @@
 import requests
+import nuke
 from pathlib import Path
 import zipfile
 import json
@@ -11,24 +12,27 @@ def try_update():
     # GitHub API URL for the latest release
     api_url = f"https://api.github.com/repos/{owner}/{repo}/releases/latest"
 
-    print("UPDATER: Querying GitHub...")
-
-    # Get latest release info
-    try:
-        response = requests.get(api_url)
-        response.raise_for_status()
-    except requests.exceptions.RequestException as err:
-        print ("Oops: Something Else",err)
-        pass
-    except requests.exceptions.HTTPError as errh:
-        print ("Http Error:",errh)
-        pass
-    except requests.exceptions.ConnectionError as errc:
-        print ("Error Connecting:",errc)
-        pass
-    except requests.exceptions.Timeout as errt:
-        print ("Timeout Error:",errt)
-        pass
+    # Check if running in GUI mode for Deadline
+    if nuke.expression("$gui") == True:
+        print("UPDATER: Querying GitHub...")
+        # Get latest release info
+        try:
+            response = requests.get(api_url)
+            response.raise_for_status()
+        except requests.exceptions.RequestException as err:
+            print ("Oops: Something Else",err)
+            pass
+        except requests.exceptions.HTTPError as errh:
+            print ("Http Error:",errh)
+            pass
+        except requests.exceptions.ConnectionError as errc:
+            print ("Error Connecting:",errc)
+            pass
+        except requests.exceptions.Timeout as errt:
+            print ("Timeout Error:",errt)
+            pass
+    else:
+        return
     
     
     release_data = response.json()

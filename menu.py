@@ -21,6 +21,12 @@ python.CustomSettings.custom_keybinds()
 
 ################################
 
+# Custom Plugins
+
+nuke.addPluginPath('./custom')
+
+################################
+
 # Add Escape to the Nodes Toolbar
 
 Escape = nuke.toolbar("Nodes").addMenu('Escape Studios', icon='escape.png')
