@@ -1,3 +1,3 @@
-import updateEnviroment
+import update_environment
 
-updateEnviroment.try_update()
+update_environment.try_update()
