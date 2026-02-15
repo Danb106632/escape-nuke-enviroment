@@ -31,7 +31,7 @@ class SubmissionPanel(nukescripts.PythonPanel):
             "submissionName", "Submission name"
         )
         self.comment = nuke.String_Knob(
-            "comment", "Comment", node.name()
+            "comment", "Comment", os.path.basename(node.knob("file").value())
         )
 
         self.divider = nuke.Text_Knob("dividerOne", "")

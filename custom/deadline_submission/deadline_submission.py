@@ -174,7 +174,7 @@ class DeadlineSubmission:
         job_info["Frames"] = submission_panel.framerange.value()
         job_info["Priority"] = priority
         job_info["Name"] = submission_panel.submission_name.value()
-        job_info["Comment"] = file_name
+        job_info["Comment"] = submission_panel.comment.value()
         job_info["Department"] = "2D"
         job_info["ConcurrentTasks"] = concurrent_tasks
         job_info["ChunkSize"] = chunk_size
